@@ -1,14 +1,14 @@
 function computerPlay() {
     let options = ['rock', 'paper', 'scissors']
-    let random =  Math.floor(Math.random() * 3);
+    let random = Math.floor(Math.random() * 3);
     let answer = options[random];
 
     return answer;
 };
 
 
-function playRound(playerSelection , computerSelection) {
-    
+function playRound(playerSelection, computerSelection) {
+
     let player = playerSelection.toLowerCase();
     let computer = computerPlay();
 
@@ -26,7 +26,7 @@ function playRound(playerSelection , computerSelection) {
         } else if (computer == 'scissors') {
             console.log("I lose")
         }
-    } else if (player == 'scissors'){
+    } else if (player == 'scissors') {
         if (computer == 'paper') {
             console.log("I win")
         } else if (computer == 'rock') {
@@ -40,7 +40,7 @@ function game() {
     playRound(playerSelection, computerSelection);
 }
 
-let playerSelection = prompt("Choose Rock, Paper, or Scissors!").toString().toLowerCase().trim();
+// let playerSelection = prompt("Choose Rock, Paper, or Scissors!").toString().toLowerCase().trim();
 let computerSelection = computerPlay();
 
 
