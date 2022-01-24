@@ -1,15 +1,57 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #2e3440;
+  color: #eceff4;
+}
+
 .hero {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 3rem;
+  letter-spacing: 5px;
 }
 
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+button {
+  padding: 3rem;
+  width: 15vw;
+  margin: 0 2rem;
+  font-size: 2rem;
+  color: #2e3440;
+  background-color: #eceff4;
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 0 0 20px #5e81ac;
+  background-color: #2ba3e9;
+  color: #eceff4;
+
+  transition: all 0.2s ease;
+}
+
+h1 {
+  padding: 0 2rem;
+  font-size: 3rem;
 }
 
 h2 {
-  padding: 0 2rem;
+  font-size: 2.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 0.5rem;
+  }
 }
