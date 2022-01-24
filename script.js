@@ -9,24 +9,24 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
 
-    let player = playerSelection.toLowerCase();
     let computer = computerPlay();
 
-    if (player === computer) {
+
+    if (playerSelection === computer) {
         console.log("tie");
-    } else if (player == 'rock') {
+    } else if (playerSelection == 'rock') {
         if (computer == 'scissors') {
             console.log("I wiN")
         } else if (computer == 'paper') {
             console.log("I lose")
         }
-    } else if (player == 'paper') {
+    } else if (playerSelection == 'paper') {
         if (computer == 'rock') {
             console.log("I Win")
         } else if (computer == 'scissors') {
             console.log("I lose")
         }
-    } else if (player == 'scissors') {
+    } else if (playerSelection == 'scissors') {
         if (computer == 'paper') {
             console.log("I win")
         } else if (computer == 'rock') {
@@ -40,7 +40,19 @@ function game() {
     playRound(playerSelection, computerSelection);
 }
 
-// let playerSelection = prompt("Choose Rock, Paper, or Scissors!").toString().toLowerCase().trim();
-let computerSelection = computerPlay();
+document.getElementById("button-1").addEventListener("click", function () {
+    console.log(this.innerHTML);
+    playRound(this.innerHTML.toLowerCase().trim());
+});
+
+document.getElementById("button-2").addEventListener("click", function () {
+    console.log(this.innerHTML.toLowerCase().trim());
+    playRound(this.innerHTML.toLowerCase().trim());
+});
+
+document.getElementById("button-3").addEventListener("click", function () {
+    console.log(this.innerHTML.toLowerCase().trim());
+    playRound(this.innerHTML.toLowerCase().trim());
+});
 
 
