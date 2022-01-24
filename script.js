@@ -1,3 +1,9 @@
+// Counter Variables
+let playerScore = 0;
+let computerScore = 0;
+
+// Makes the computer choose a random option
+
 function computerPlay() {
     let options = ['rock', 'paper', 'scissors']
     let random = Math.floor(Math.random() * 3);
@@ -6,10 +12,13 @@ function computerPlay() {
     return answer;
 };
 
+// Plays 1 round of Rock Paper scissors given the button you click against a computer that chooses at random
+
 
 function playRound(playerSelection, computerSelection) {
 
     let computer = computerPlay();
+    console.log(computer);
 
 
     if (playerSelection === computer) {
@@ -17,24 +26,43 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection == 'rock') {
         if (computer == 'scissors') {
             console.log("I wiN")
+            playerScore++
         } else if (computer == 'paper') {
             console.log("I lose")
+            computerScore++
         }
     } else if (playerSelection == 'paper') {
         if (computer == 'rock') {
             console.log("I Win")
+            playerScore++
         } else if (computer == 'scissors') {
             console.log("I lose")
+            computerScore++
         }
     } else if (playerSelection == 'scissors') {
         if (computer == 'paper') {
             console.log("I win")
+            playerScore++
         } else if (computer == 'rock') {
             console.log("I lose")
+            computerScore++
         }
     }
 
+    document.getElementById('player').innerHTML = playerScore;
+    document.getElementById('computer').innerHTML = computerScore;
+
+    if (playerScore == 5) {
+        alert('You Win!');
+        document.location.reload();
+    } else if (computerScore == 5) {
+        alert('Computer Wins!')
+        document.location.reload();
+    }
+
 }
+
+// Initiates the game
 
 function game() {
     playRound(playerSelection, computerSelection);
@@ -55,4 +83,6 @@ document.getElementById("button-3").addEventListener("click", function () {
     playRound(this.innerHTML.toLowerCase().trim());
 });
 
+document.getElementById('player').innerHTML = playerScore;
+document.getElementById('computer').innerHTML = playerScore;
 
